@@ -1,0 +1,183 @@
+@import "seattletimes";
+@import "animation";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1.constrained {
+  font-size: 46px;
+  text-align: center;
+  max-width: 850px !important;
+
+  @media @mobile {
+    font-size: 28px;
+  }
+}
+
+.whiteout {
+  background: white;
+  clear: both;
+  padding: 4px 0;
+  box-shadow: 
+    0 8px 16px 16px fade(black, 16%),
+    0 -8px 16px 16px fade(black, 16%);
+
+  .constrained {
+    max-width: 760px;
+    padding: 20px;
+    margin: auto;
+  }
+}
+
+aside.traffic-lab {
+  float: right;
+  width: 50%;
+  padding: 0 20px 20px;
+  font-family: @df-sans;
+  font-size: 16px;
+
+  @media @mobile {
+    display: none;
+  }
+
+  .read-more {
+    display: block;
+    text-align: right;
+  }
+}
+
+.map-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #BAC7D2;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: @df-sans;
+
+    text, tspan {
+      font-family: @df-sans !important;
+    }
+
+    & > g[id] {
+      visibility: hidden;
+
+      &.highlight {
+        visibility: visible;
+        filter: url(#drop);
+      }
+    }
+  }
+
+  image {
+    transition: opacity .2 linear;
+    transform: translateZ(0);
+  }
+
+  image.zoomed {
+    // filter: url(#desat);
+    opacity: .6;
+  }
+}
+
+.poi {
+  float: right;
+  clear: right;
+  background: white;
+  width: 50%;
+  max-width: 600px;
+  padding: 20px;
+  margin-top: 30vh;
+  margin-bottom: 60vh;
+  margin-right: 40px;
+  box-shadow: 0 24px 16px -8px fade(black, 20%);
+
+  @media @mobile {
+    float: none;
+    width: auto;
+    margin: 85vh 10px;
+  }
+
+  &.instructions {
+    font-family: @df-sans;
+    font-style: italic;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.photo {
+  img {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+
+  .credit {
+    text-align: right;
+    text-transform: uppercase;
+    font-family: @df-sans;
+    font-size: 15px;
+    font-style: italic;
+  }
+}
+
+ul.dates {
+  padding: 0;
+  margin: 16px 0;
+  list-style-type: none;
+  font-family: @df-sans;
+  font-size: 80%;
+
+  .label {
+    text-transform: uppercase;
+  }
+}
+
+.credit-block {
+  .display-flex();
+  padding: 20px 10px;
+  background: @df-light-gray;
+
+  @media @mobile {
+    display: block;
+  }
+
+  .credits {
+    .flex(0 0 50%);
+    font-family: @df-sans;
+    font-size: 16px;
+    padding-right: 20px;
+  }
+
+  .reporter {
+    padding: 0 0 20px;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+}
