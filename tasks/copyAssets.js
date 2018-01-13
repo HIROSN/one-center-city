@@ -12,6 +12,7 @@ module.exports = function(grunt) {
     if (grunt.file.exists("src/assets")) {
       if (!grunt.file.exists("build/assets")) shell.mkdir("-p", "build/assets");
       shell.cp("-r", "src/assets", "build");
+      shell.cp("src/assets/css.css", "build");
     }
   });
 
