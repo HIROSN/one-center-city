@@ -13,6 +13,8 @@ module.exports = function(grunt) {
       if (!grunt.file.exists("build/assets")) shell.mkdir("-p", "build/assets");
       shell.cp("-r", "src/assets", "build");
       shell.cp("src/assets/css.css", "build");
+      shell.cp("src/assets/animation/maxcon_banner_bg.jpg", "build");
+      shell.cp("src/assets/animation/maxcon_banner_biker.png", "build");
     }
   });
 
