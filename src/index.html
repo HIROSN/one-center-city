@@ -1,30 +1,45 @@
 <!doctype html>
 <html lang="en-US">
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        max-width: 100%;
+      }
+      .splash {
+        position: relative;
+        max-width: 1200px;
+        margin: auto;
+        overflow: hidden;
+      }
+      @keyframes pedal {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(400%) translateY(-40%);
+        }
+      }
+      .splash .layer.bike {
+        width: 30%;
+        top: 70%;
+        animation: 7s pedal linear infinite;
+      }
+      .splash .layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateZ(0);
+      }
+    </style>
   </head>
   <body>
-    <div class="whiteout">
-      <div class="splash">
-        <div class="animation-container">
-          <img src="./assets/animation/maxcon_banner_bg.jpg" class="backdrop">
-          <img src="./assets/animation/maxcon_banner_biker.png" class="bike layer">
-        </div>
-      </div>
-    </div>
-    <div class="interactive">
-      <savage-image src="./assets/map.svg" class="map-container" aria-label="A map of all construction projects in One Center City" role="img"></savage-image>
-      <%
-      var commonmark = require("commonmark");
-      var parser = new commonmark.Parser();
-      var writer = new commonmark.HtmlRenderer({ smart: true });
-      var html = md => writer.render(parser.parse(md));
-      %>
-      <% json.poi.forEach(function(poi) { %>
-        <div class="poi" data-map="<%= poi.link || "" %>">
-          <%= t.include("_poi.html", { poi, html }) %>
-        </div>
-      <% }) %>
+    <div class="splash">
+      <img src="./assets/animation/maxcon_banner_bg.jpg" class="">
+      <img src="./assets/animation/maxcon_banner_biker.png" class="bike layer">
     </div>
     <script src="app.js" async></script>
   </body>
