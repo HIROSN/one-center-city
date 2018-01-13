@@ -68,8 +68,3 @@ var asyncScripts = function(callback) {
   };
   head.appendChild(script);
 };
-
-viewLink.addEventListener("click", function() {
-  viewLink.innerHTML = "Loading..."
-  setTimeout(asyncScripts, 100);
-})
