@@ -1,8 +1,3 @@
-require("./lib/social");
-require("./lib/ads");
-require("./lib/comments");
-// var track = require("./lib/tracking");
-
 require("savage-image");
 
 var $ = require("./lib/qsa");
