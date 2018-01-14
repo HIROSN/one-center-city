@@ -1,12 +1,41 @@
 <!doctype html>
 <html lang="en-US">
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      .map-container svg > g[id].highlight {
+        filter: url(#drop);
+      }
+      .map-container svg text,
+      .map-container svg tspan {
+        font-family: Helvetica Neue, Helvetica, sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <div class="interactive">
-      <savage-image src="./assets/map.svg" class="map-container" aria-label="A map of all construction projects in One Center City" role="img"></savage-image>
+    <div class="map-container">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="770.1px" height="909.3px" viewBox="61 476 258 273" style="enable-background:new 0 0 770.1 909.3;" xml:space="preserve" alt="An interactive map of the One Center City project">
+        <style type="text/css">
+          .st53{font-size:10px;}
+          .st65{font-size:6.0001px;}
+          .st66{font-size:6px;}
+          .st73{fill:none;stroke:#F26522;stroke-width:1.6;stroke-linejoin:round;}
+        </style>
+        <g id="third_ave" class="highlight">
+          <polyline class="st73" points="108.3,495.2 222.3,597.2 305.7,735.8 309.3,739.5 	"></polyline>
+          <text transform="matrix(1 0 0 1 105.583 528.0251)" class="st53">Belltown</text>
+          <text transform="matrix(0.4816 0.8764 -0.8764 0.4816 258.3049 652.0068)" class="st66">3RD AVE.</text>
+          <text transform="matrix(0.7483 0.6633 -0.6633 0.7483 173.5751 550.5469)" class="st66">3RD AVE.</text>
+          <text transform="matrix(0.9999 1.687000e-02 -1.687000e-02 0.9999 71.2745 491.7378)" class="st65">DENNY WAY</text>
+          <defs>
+            <filter id="drop">
+              <feDropShadow dx="-1" dy="1" stdDeviation="0.5" flood-color="#D8D9DA" flood-opacity="1"></feDropShadow>
+              <feDropShadow dx="-1" dy="-1" stdDeviation="0.5" flood-color="#D8D9DA" flood-opacity="1"></feDropShadow>
+              <feDropShadow dx="1" dy="1" stdDeviation="0.5" flood-color="#D8D9DA" flood-opacity="1"></feDropShadow>
+              <feDropShadow dx="1" dy="-1" stdDeviation="0.5" flood-color="#D8D9DA" flood-opacity="1"></feDropShadow>
+            </filter>
+          </defs>
+        </g>
+      </svg>
     </div>
-    <script src="app.js" async></script>
   </body>
 </html>
