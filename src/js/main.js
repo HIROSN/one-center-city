@@ -41,24 +41,16 @@ container.addEventListener("load", function() {
   defs.appendChild(desat);
 
 
-  window.addEventListener("scroll", debounce(function() {
+  window.requestAnimationFrame(debounce(function() {
 
     var located = false;
-    for (var i = 0; i < poiList.length; i++) {
-      var poi = poiList[i];
-      var id = poi.getAttribute("data-map");
-      if (!id) continue;
-      var layer = $.one("#" + id, container);
-      if (!layer) return console.log(id);
-      var bounds = poi.getBoundingClientRect();
-      if (!located && bounds.top < window.innerHeight) {
-        if (id == current) return;
-        located = layer;
-        savage(layer).addClass("highlight");
-      } else {
-        savage(layer).removeClass("highlight");
-      }
-    }
+    var poi = poiList[0];
+    var id = "third_ave";
+    var layer = $.one("#" + id, container);
+    if (!layer) return console.log(id);
+    if (id == current) return;
+    located = layer;
+    savage(layer).addClass("highlight");
 
     if (!located) {
       current = null;

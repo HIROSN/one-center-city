@@ -6,17 +6,6 @@
   <body>
     <div class="interactive">
       <savage-image src="./assets/map.svg" class="map-container" aria-label="A map of all construction projects in One Center City" role="img"></savage-image>
-      <%
-      var commonmark = require("commonmark");
-      var parser = new commonmark.Parser();
-      var writer = new commonmark.HtmlRenderer({ smart: true });
-      var html = md => writer.render(parser.parse(md));
-      %>
-      <% json.poi.forEach(function(poi) { %>
-        <div class="poi" data-map="<%= poi.link || "" %>">
-          <%= t.include("_poi.html", { poi, html }) %>
-        </div>
-      <% }) %>
     </div>
     <script src="app.js" async></script>
   </body>
